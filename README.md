@@ -1,3 +1,13 @@
+# Process feature
+Ne pas poussé vers branche dev (groupe-3). Pour chaque feature :
+- créer une branche : git checkout - b nomDeTaBranche
+- une fois ta feature fini, git status, git add . et git commit -m 'tonCommit'
+- ensuite tu pousse ta branche : git push origin leNomDeTaBranche
+
+Pour récupérer les modifications une fois la PR (traiter sur github) vers la dev :
+- tu repasse sur la branche dev : git checkout groupe-3
+- git pull origin groupe-3
+
 # Groupe3PinterestLike
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
