@@ -1,0 +1,19 @@
+img {
+    width: 350px;
+    min-height: auto;
+    box-shadow: 5px 5px 15px gray;
+}
+
+a {
+    color: #000000
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px
+}
+
+.detail div {
+    text-align: center;
+}

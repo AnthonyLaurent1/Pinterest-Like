@@ -1,0 +1,10 @@
+<div class="detail">
+    <div>
+        <img [src]="'assets/resources/' + id + '.jpg'" alt="{{ id }}">
+    </div>
+    <div>
+        <h3><a href="{{ fileName[id]['user_url']}}">{{ fileName[id]['user_name']}}</a></h3>
+        <h4><a href="{{ fileName[id]['photo_url']}}">Lien vers l'image</a></h4>
+    </div>
+<button id="btn-favorite" (click)="addFavorite()" [ngStyle]="{backgroundColor:verifyFavoriteExist() ? 'red' : ''}">Ajouter à mes favoris</button>
+</div>

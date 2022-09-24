@@ -1,5 +1,7 @@
 <div class="block">
     <div *ngFor="let img of key">
-        <img [src]="'assets/resources/' + img + '.jpg'" alt="{{ img }}">
+        <a routerLink="image/{{ img }}">
+            <img [src]="'assets/resources/' + img + '.jpg'" alt="{{ img }}">
+        </a>
     </div>
 </div>

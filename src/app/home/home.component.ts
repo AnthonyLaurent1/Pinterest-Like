@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import File from '../../assets/resources/__credits.json';
 
 @Component({
@@ -7,14 +7,13 @@ import File from '../../assets/resources/__credits.json';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @Input() fileName = File;
 
-  key = Object.keys(this.fileName);
+  key = Object.keys(File);
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.key)
+
   }
 
 }
