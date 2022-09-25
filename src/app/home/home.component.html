@@ -1,5 +1,10 @@
 <div class="block">
-    <div *ngFor="let img of key">
+    <ul>
+        <li *ngFor="let number of itemPerPage">
+            <button (click)="setNumberItemPerPage(number.toString())">{{number}}</button>
+        </li>
+    </ul>
+    <div *ngFor="let img of key | slice : 0 : page">
         <img [src]="'assets/resources/' + img + '.jpg'" alt="{{ img }}">
     </div>
 </div>
