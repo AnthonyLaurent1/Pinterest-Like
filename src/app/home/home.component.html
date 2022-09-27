@@ -1,10 +1,16 @@
+<select (change)="changeNumberItemsPerPage($event)">
+    <option value="{{ keys.length }}" selected>Select number item per page</option>
+    <option *ngFor="let num of numberItem" value="{{ num }}">{{ num }}</option>
+</select>
+
+<div *ngIf="list.length < 119">
+    <button (click)="previousPage()">Précedent</button>
+    <button (click)="nextPage()">Suivant</button>
+</div>
+
 <div class="block">
-    <ul>
-        <li *ngFor="let number of itemPerPage">
-            <button (click)="setNumberItemPerPage(number.toString())">{{number}}</button>
-        </li>
-    </ul>
-    <div *ngFor="let img of key | slice : 0 : page">
+    <div *ngFor="let img of list; let i = index">
         <img [src]="'assets/resources/' + img + '.jpg'" alt="{{ img }}">
+        {{ i }}
     </div>
 </div>

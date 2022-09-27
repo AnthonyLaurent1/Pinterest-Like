@@ -7,37 +7,44 @@ import File from '../../assets/resources/__credits.json';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   fileName = File;
 
-  key = Object.keys(this.fileName);
+  keys = Object.keys(this.fileName);
 
-  itemPerPage : number[] = [10, 20, 50]
+  itemPerPage : number = this.keys.length
 
-  page: any = localStorage.getItem('page');
+  numberItem: number[] = [10, 20, 50]
 
-  array50: string[][] = this.sortArray(this.key, 50, 32, 50, 50);
-  array20: string[][]    = this.sortArray(this.key, 20, 2, 20, 20);
-  array10: string[][]    = this.sortArray(this.key, 10, 2, 10, 10)
+  page: number = 1;
 
-  setNumberItemPerPage(n: string) {
-    localStorage.setItem('page', n)
-    location.reload()
+  list: string[] = [];
+
+  constructor() { }
+
+  changeNumberItemsPerPage(event: Event) {
+    this.page = 1
+    this.itemPerPage = parseInt((event.target as HTMLInputElement).value);
+    this.showImage()
   }
 
-  sortArray(key: string[], start: number, length: number, incre: number, slice: number): string[][] {
-    let array: string[][] = []
-
-    for (let i = start; i < key.length + length ; i+=incre) {
-      let e = key.slice(i-slice, i)
-      array.push(e)
-    }
-    return array
+  nextPage() {
+    this.page+=1;
+    this.showImage()
   }
 
-  constructor() {}
+  previousPage() {
+    this.page-=1;
+    this.showImage()
+  }
+
+  showImage(): void {
+    let startId: number = (this.page - 1) * this.itemPerPage;
+    let endId: number = startId + this.itemPerPage;
+    this.list = this.keys.slice(startId, endId);
+  }
 
   ngOnInit(): void {
-
+    this.showImage();
   }
-
 }
