@@ -8,12 +8,11 @@ import File from '../../assets/resources/__credits.json';
 })
 export class UserComponent implements OnInit {
 
-  image = File
+  public image = File
 
-  datas: string[] = Object.keys(localStorage)
+  public datas: string[] = Object.keys(localStorage)
 
-  constructor() {
-  }
+  constructor() { }
 
   removeFavorite(key: string) {
     localStorage.removeItem(key);
@@ -25,7 +24,6 @@ export class UserComponent implements OnInit {
     location.reload()
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

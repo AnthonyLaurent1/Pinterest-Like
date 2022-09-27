@@ -8,19 +8,19 @@ import File from '../../assets/resources/__credits.json';
 })
 export class HomeComponent implements OnInit {
 
-  fileName = File;
+  public fileName = File;
 
-  keys = Object.keys(this.fileName);
+  public keys = Object.keys(this.fileName);
 
-  itemsPerPage : number = this.keys.length
+  public itemsPerPage : number = this.keys.length
 
-  numbersItems: number[] = [10, 20, 50]
+  public numbersItems: number[] = [10, 20, 50]
 
-  page: number = 1;
+  public page: number = 1;
 
-  list: string[] = [];
+  public list: string[] = [];
 
-  numberMaxPage: number = 0
+  public numberMaxPage: number = 0
 
   constructor() { }
 

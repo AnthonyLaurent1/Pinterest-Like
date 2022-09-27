@@ -1,16 +1,7 @@
 <select (change)="changeNumberItemsPerPage($event)">
-    <option value="{{ keys.length }}" selected>Nombres d'images par page</option>
+    <option value="{{ keys.length }}">Nombres d'images par page</option>
     <option *ngFor="let num of numbersItems" value="{{ num }}">{{ num }}</option>
 </select>
-
-<span *ngIf="list.length < 119">
-    <span *ngIf="page !== 1">
-        <button (click)="previousPage()">Précedent</button>
-    </span>
-    <span *ngIf="page < numberMaxPage">
-        <button (click)="nextPage()">Suivant</button>
-    </span>
-</span>
 
 <div class="block">
     <div *ngFor="let img of list">
@@ -18,4 +9,16 @@
             <img [src]="'assets/resources/' + img + '.jpg'" alt="{{ img }}">
         </a>
     </div>
+</div>
+
+<div class="pagination">
+    <span *ngIf="list.length < 119">
+        <span *ngIf="page !== 1">
+            <button (click)="previousPage()">Précedent</button>
+        </span>
+        <span>{{ page }}/ {{ numberMaxPage}}</span>
+        <span *ngIf="page < numberMaxPage">
+            <button (click)="nextPage()">Suivant</button>
+        </span>
+    </span>
 </div>

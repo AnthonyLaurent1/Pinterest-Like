@@ -9,9 +9,9 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class DetailComponent implements OnInit {
 
-  id!: string;
+  public  id: string = '';
 
-  fileName: any = File;
+  public fileName: any = File;
 
   constructor(private route: ActivatedRoute) {
   }
