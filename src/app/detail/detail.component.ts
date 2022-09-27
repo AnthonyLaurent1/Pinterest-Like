@@ -1,6 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import File from '../../assets/resources/__credits.json';
 import {ActivatedRoute} from "@angular/router";
+import * as light from '@fortawesome/free-regular-svg-icons';
+import * as solid  from '@fortawesome/free-solid-svg-icons';
+import {IconDefinition} from "@fortawesome/fontawesome-svg-core";
 
 @Component({
   selector: 'app-detail',
@@ -13,26 +16,26 @@ export class DetailComponent implements OnInit {
 
   public fileName: any = File;
 
+  public favoriteButton: IconDefinition = light.faHeart;
+
   constructor(private route: ActivatedRoute) {
   }
 
-  addFavorite() {
+  addFavorite(): void {
     localStorage.setItem(this.id, this.id);
+    this.favoriteButton = solid.faHeart
   }
 
-  verifyFavoriteExist(): boolean {
-    const button: any = document.getElementById('btn-favorite');
+  verifyFavoriteExist(): void {
     if (localStorage.getItem(this.id)) {
-      button.innerHTML = 'Déja dans vos favoris';
-      return true
+      this.favoriteButton = solid.faHeart
     }
-
-    return false
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params['id'];
     })
+    this.verifyFavoriteExist()
   }
 }
