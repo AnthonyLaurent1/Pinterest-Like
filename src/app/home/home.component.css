@@ -15,3 +15,13 @@
     transition: all .8s;
     transform: scale(1.2);
 }
+
+select {
+    margin: 20px 0 50px 0;
+    padding: 5px;
+}
+
+button {
+    margin: 10px;
+    padding: 5px;
+}
