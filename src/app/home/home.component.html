@@ -1,6 +1,6 @@
 <select (change)="changeNumberItemsPerPage($event)">
     <option value="{{ keys.length }}" selected>Select number item per page</option>
-    <option *ngFor="let num of numberItem" value="{{ num }}">{{ num }}</option>
+    <option *ngFor="let num of numbersItems" value="{{ num }}">{{ num }}</option>
 </select>
 
 <div *ngIf="list.length < 119">
@@ -9,8 +9,7 @@
 </div>
 
 <div class="block">
-    <div *ngFor="let img of list; let i = index">
+    <div *ngFor="let img of list">
         <img [src]="'assets/resources/' + img + '.jpg'" alt="{{ img }}">
-        {{ i }}
     </div>
 </div>

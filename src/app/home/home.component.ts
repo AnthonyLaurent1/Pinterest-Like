@@ -12,9 +12,9 @@ export class HomeComponent implements OnInit {
 
   keys = Object.keys(this.fileName);
 
-  itemPerPage : number = this.keys.length
+  itemsPerPage : number = this.keys.length
 
-  numberItem: number[] = [10, 20, 50]
+  numbersItems: number[] = [10, 20, 50]
 
   page: number = 1;
 
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   changeNumberItemsPerPage(event: Event) {
     this.page = 1
-    this.itemPerPage = parseInt((event.target as HTMLInputElement).value);
+    this.itemsPerPage = parseInt((event.target as HTMLInputElement).value);
     this.showImage()
   }
 
@@ -39,8 +39,8 @@ export class HomeComponent implements OnInit {
   }
 
   showImage(): void {
-    let startId: number = (this.page - 1) * this.itemPerPage;
-    let endId: number = startId + this.itemPerPage;
+    let startId: number = (this.page - 1) * this.itemsPerPage;
+    let endId: number = startId + this.itemsPerPage;
     this.list = this.keys.slice(startId, endId);
   }
 
