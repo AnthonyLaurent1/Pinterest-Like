@@ -18,12 +18,16 @@ export class DetailComponent implements OnInit {
 
   public favoriteButton: IconDefinition = light.faHeart;
 
-  constructor(private route: ActivatedRoute) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   addFavorite(): void {
-    localStorage.setItem(this.id, this.id);
-    this.favoriteButton = solid.faHeart
+    if (localStorage.getItem(this.id)) {
+      localStorage.removeItem(this.id);
+      this.favoriteButton = light.faHeart
+    } else {
+      localStorage.setItem(this.id, this.id);
+      this.favoriteButton = solid.faHeart
+    }
   }
 
   verifyFavoriteExist(): void {

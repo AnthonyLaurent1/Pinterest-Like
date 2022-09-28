@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import {IconDefinition} from "@fortawesome/fontawesome-svg-core";
 
 @Component({
   selector: 'app-header',
@@ -8,12 +9,11 @@ import { Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  profile : string = 'assets/profile.jpg';
+  profile : IconDefinition = faUser;
 
   name : string = 'Pinterest Like';
 
   logo : string = 'assets/logo.jpg';
-
 
   constructor() { }
 

@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   public fileName = File;
 
-  public keys = Object.keys(this.fileName);
+  public keys = Object.keys(this.fileName).sort();
 
   public itemsPerPage : number = this.keys.length
 
@@ -24,19 +24,19 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  changeNumberItemsPerPage(event: Event) {
+  changeNumberItemsPerPage(event: Event): void {
     this.page = 1
     this.itemsPerPage = parseInt((event.target as HTMLInputElement).value);
     this.showImage()
     this.numberMaxPage = Math.ceil(this.keys.length / this.itemsPerPage)
   }
 
-  nextPage() {
+  nextPage(): void {
     this.page+=1;
     this.showImage()
   }
 
-  previousPage() {
+  previousPage(): void {
     this.page-=1;
     this.showImage()
   }
@@ -45,6 +45,11 @@ export class HomeComponent implements OnInit {
     let startId: number = (this.page - 1) * this.itemsPerPage;
     let endId: number = startId + this.itemsPerPage;
     this.list = this.keys.slice(startId, endId);
+  }
+
+  sortImages(): void {
+    this.keys = this.keys.reverse();
+    this.showImage()
   }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 img {
-    width: 350px;
-    min-height: auto;
+    width: 450px;
+    height: 450px;
     box-shadow: 5px 5px 15px gray;
 }
 
@@ -9,11 +9,25 @@ a {
 }
 
 .detail {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px 0 0 0
 }
 
 .detail div {
     text-align: center;
+}
+
+h3, h4 {
+    margin: 30px;
+}
+
+a:hover {
+    color: darkred;
+}
+
+fa-icon {
+    font-size: 50px;
+    color: darkred;
 }

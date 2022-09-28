@@ -1,15 +1,19 @@
-<div *ngIf="datas.length > 0">
-    <button (click)="removeAllFavorites()">Tous supprimer</button>
-    <div class="favorite">
-        <div *ngFor="let data of datas">
-            <a routerLink="../image/{{data}}">
-                <img [src]="'assets/resources/' + data + '.jpg'" alt="">
-            </a>
-            <button (click)="removeFavorite(data)">Supprimer</button>
+<div>
+    <div class="image-all" *ngIf="datas.length > 0">
+        <span (click)="removeAllFavorites()">Tous supprimer</span>
+        <p>Nombre d'image(s) en favoris : {{ numberFavorite }} </p>
+        <div class="favorite">
+            <div *ngFor="let data of datas">
+                    <img [src]="'assets/resources/' + data + '.jpg'" alt="" routerLink="../image/{{data}}">
+                    <span (click)="removeFavorite(data)">
+                        <fa-icon [icon]="remove"></fa-icon>
+                    </span>
+            </div>
+
         </div>
     </div>
-</div>
 
-<div *ngIf="datas.length === 0">
-    <p>Aucune image dans vos favoris</p>
+    <div class="image-0" *ngIf="datas.length === 0">
+        <p>Aucune image dans vos favoris</p>
+    </div>
 </div>
