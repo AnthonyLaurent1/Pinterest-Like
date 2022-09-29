@@ -1,7 +1,9 @@
 <div>
     <div class="image-all" *ngIf="datas.length > 0">
-        <span (click)="removeAllFavorites()">Tout supprimer</span>
-        <p>Nombre d'image(s) en favoris : {{ numberFavorite }} </p>
+        <div class="infos">
+            <p (click)="removeAllFavorites()">Tout supprimer</p>
+            <p>Nombre d'image(s) en favoris : {{ numberFavorite }} </p>
+        </div>
         <div class="favorite">
             <div *ngFor="let data of datas">
                 <img [src]="'assets/resources/' + data + '.jpg'" alt="" routerLink="../image/{{data}}">

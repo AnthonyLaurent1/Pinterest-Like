@@ -1,10 +1,15 @@
-<div>
-    <select (change)="changeNumberItemsPerPage($event)">
-        <option value="{{ keys.length }}">Nombres d'images par page</option>
-        <option *ngFor="let num of numbersItems" value="{{ num }}">{{ num }}</option>
-    </select>
-    <button (click)="sortImages()">Trier</button>
+<div class="select-page">
+    <div>
+        <select (change)="changeNumberItemsPerPage($event)">
+            <option value="{{ keys.length }}">Nombres d'images par page</option>
+            <option *ngFor="let num of numbersItems" value="{{ num }}">{{ num }}</option>
+        </select>
+    </div>
+    <div>
+        <button (click)="sortImages()">Trier</button>
+    </div>
 </div>
+
 <div class="block">
     <div *ngFor="let img of list">
         <a routerLink="image/{{ img }}">

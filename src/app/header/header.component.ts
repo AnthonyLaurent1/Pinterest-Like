@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   name : string = 'Pinterest Like';
 
-  logo : string = 'assets/logo.jpg';
+  logo : string = 'assets/logo.png';
 
   constructor() { }
 

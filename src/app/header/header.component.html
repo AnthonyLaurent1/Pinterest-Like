@@ -1,5 +1,7 @@
-<div>
-    <p>Logo</p>
-    <a routerLink="/"><h1>{{ name }}</h1></a>
-    <span routerLink="user"><fa-icon [icon]="profile"></fa-icon></span>
+<div class="container">
+    <ul>
+        <li routerLink="/"><img [src]="logo" alt="" width="50px" height="50px"></li>
+        <li><h1>{{ name }}</h1></li>
+        <li routerLink="user"><fa-icon [icon]="profile"></fa-icon></li>
+    </ul>
 </div>

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
-    margin: 30px;
+    margin-top: 40px
 }
 
 .favorite img {
@@ -10,6 +10,7 @@
     height: 80%;
     box-shadow: 5px 5px 15px gray;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .favorite button {
@@ -22,7 +23,8 @@
 }
 
 .image-all {
-    margin: 50px 0 0 0;
+    margin: 50px 0 50px 0;
+    padding-bottom: 70px;
 }
 
 a {
@@ -38,10 +40,20 @@ fa-icon {
 span {
     display: flex;
     justify-content: center;
-    margin: 15px 0 0 0;
+    margin-top: 15px;
+    padding-bottom: 30px;
 }
 
-.image-all > span {
+.image-all > p {
+    cursor: pointer;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infos > p {
     cursor: pointer;
 }
 
@@ -49,4 +61,15 @@ fa-icon:hover {
     transition: all .8s;
     transform: scale(1.2);
     cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .favorite {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 600px) {
+    .favorite {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

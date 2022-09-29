@@ -2,6 +2,7 @@ img {
     width: 450px;
     height: 450px;
     box-shadow: 5px 5px 15px gray;
+    border-radius: 10px;
 }
 
 a {
@@ -30,4 +31,22 @@ a:hover {
 fa-icon {
     font-size: 50px;
     color: darkred;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .detail {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    img {
+        width: 350px;
+        height: 350px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+    }
 }
