@@ -13,7 +13,8 @@ a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 40px 0 0 0
+    margin: 40px 0 0 0;
+    padding-bottom: 80px;
 }
 
 .detail div {

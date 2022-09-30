@@ -10,8 +10,6 @@ import {IconDefinition} from "@fortawesome/fontawesome-svg-core";
 })
 export class UserComponent implements OnInit {
 
-  public image = File
-
   public datas: string[] = Object.keys(localStorage)
 
   public remove: IconDefinition = faTrashAlt
@@ -25,11 +23,10 @@ export class UserComponent implements OnInit {
     location.reload()
   }
 
-  removeAllFavorites() {
+  removeAllFavorites(): void {
     localStorage.clear()
     location.reload()
   }
 
   ngOnInit(): void { }
-
 }

@@ -6,16 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-image = 'assets/github.png'
-  github = {
-    'Anthony': 'https://github.com/AnthonyLaurent1',
-    'Adrien' : 'https://github.com/E-Adrien8',
-    'Mathieu': 'https://github.com/matgoy',
-  }
+
+  public image: string = 'assets/github.png'
+
+  public accounts: string[] = [
+      'https://github.com/AnthonyLaurent1',
+      'https://github.com/E-Adrien8',
+      'https://github.com/matgoy'
+  ]
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

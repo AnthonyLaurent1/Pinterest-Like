@@ -8,13 +8,13 @@ import File from '../../assets/resources/__credits.json';
 })
 export class HomeComponent implements OnInit {
 
-  public fileName = File;
+  public file = File;
 
-  public keys = Object.keys(this.fileName).sort();
+  public keys: string[] = Object.keys(this.file).sort();
 
   public itemsPerPage : number = this.keys.length
 
-  public numbersItems: number[] = [10, 20, 50]
+  public numbersItem: number[] = [10, 20, 50]
 
   public page: number = 1;
 
@@ -27,21 +27,21 @@ export class HomeComponent implements OnInit {
   changeNumberItemsPerPage(event: Event): void {
     this.page = 1
     this.itemsPerPage = parseInt((event.target as HTMLInputElement).value);
-    this.showImage()
+    this.showImages()
     this.numberMaxPage = Math.ceil(this.keys.length / this.itemsPerPage)
   }
 
   nextPage(): void {
     this.page+=1;
-    this.showImage()
+    this.showImages()
   }
 
   previousPage(): void {
     this.page-=1;
-    this.showImage()
+    this.showImages()
   }
 
-  showImage(): void {
+  showImages(): void {
     let startId: number = (this.page - 1) * this.itemsPerPage;
     let endId: number = startId + this.itemsPerPage;
     this.list = this.keys.slice(startId, endId);
@@ -49,10 +49,10 @@ export class HomeComponent implements OnInit {
 
   sortImages(): void {
     this.keys = this.keys.reverse();
-    this.showImage()
+    this.showImages()
   }
 
   ngOnInit(): void {
-    this.showImage();
+    this.showImages();
   }
 }

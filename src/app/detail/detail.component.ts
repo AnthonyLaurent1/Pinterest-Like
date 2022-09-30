@@ -12,33 +12,33 @@ import {IconDefinition} from "@fortawesome/fontawesome-svg-core";
 })
 export class DetailComponent implements OnInit {
 
-  public  id: string = '';
+  public  imageId: string = '';
 
-  public fileName: any = File;
+  public file: any = File;
 
   public favoriteButton: IconDefinition = light.faHeart;
 
   constructor(private route: ActivatedRoute) {}
 
   addFavorite(): void {
-    if (localStorage.getItem(this.id)) {
-      localStorage.removeItem(this.id);
+    if (localStorage.getItem(this.imageId)) {
+      localStorage.removeItem(this.imageId);
       this.favoriteButton = light.faHeart
     } else {
-      localStorage.setItem(this.id, this.id);
+      localStorage.setItem(this.imageId, this.imageId);
       this.favoriteButton = solid.faHeart
     }
   }
 
   verifyFavoriteExist(): void {
-    if (localStorage.getItem(this.id)) {
+    if (localStorage.getItem(this.imageId)) {
       this.favoriteButton = solid.faHeart
     }
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.id = params['id'];
+      this.imageId = params['id'];
     })
     this.verifyFavoriteExist()
   }

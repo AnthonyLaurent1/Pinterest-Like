@@ -1,10 +1,10 @@
 <div class="detail">
     <div class="container">
-        <img [src]="'assets/resources/' + id + '.jpg'" alt="{{ id }}">
+        <img [src]="'assets/resources/' + imageId + '.jpg'" alt="{{ imageId }}">
     </div>
     <div>
-        <h3><a href="{{ fileName[id]['user_url']}}">{{ fileName[id]['user_name']}}</a></h3>
-        <h4><a href="{{ fileName[id]['photo_url']}}">Lien vers l'image</a></h4>
+        <h3><a href="{{ file[imageId]['user_url']}}">{{ file[imageId]['user_name']}}</a></h3>
+        <h4><a href="{{ file[imageId]['photo_url']}}">Lien vers l'image</a></h4>
         <span (click)="addFavorite()">
             <fa-icon [icon]="favoriteButton"></fa-icon>
         </span>
